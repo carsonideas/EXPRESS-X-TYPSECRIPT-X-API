@@ -28,7 +28,11 @@ export const getTask = async (req: Request, res: Response) => {
 export const createTask = async (req: Request, res: Response) => {
   const { title, description } = req.body;
   try {
-    const task = await prisma.task.create({ data: { title, description } });
+    const task = await prisma.task.create({ 
+      data:
+       { title,
+         description
+         } });
     return res.status(201).json(task);
   } catch (e) {
     return res.status(500).json({ message: "HOUSTON! something went wrong!! noooo!!!!" });
