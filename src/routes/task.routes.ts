@@ -4,7 +4,7 @@ import {
   getTask,
   createTask,
   updateTask,
-  deleteTask
+  deleteTask,
 } from "../controllers/task.controller";
 
 import { validateTask } from "../middlewares/validateTask";
