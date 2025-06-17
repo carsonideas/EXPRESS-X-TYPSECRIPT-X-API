@@ -5,9 +5,7 @@ import {
   createTask,
   updateTask,
   deleteTask
-} 
-
-from "../controllers/task.controller";
+} from "../controllers/task.controller";
 
 import { validateTask } from "../middlewares/validateTask";
 
@@ -15,8 +13,8 @@ const router = Router();
 
 router.get("/", getTasks);
 router.get("/:id", getTask);
-router.post("/", validateTask, createTask);        
-router.patch("/:id", validateTask, updateTask);    
+router.post("/", validateTask, createTask);
+router.patch("/:id", validateTask, updateTask);
 router.delete("/:id", deleteTask);
 
 export default router;

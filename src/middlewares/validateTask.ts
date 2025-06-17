@@ -1,15 +1,21 @@
 import { Request, Response, NextFunction } from "express";
 
-export const validateTask = (req: Request, res: Response, next: NextFunction) => {
+export const validateTask = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
   const { title, description } = req.body;
 
   if (!title || typeof title !== "string") {
-    return res.status(400).json({ message: "Title is required and must be a string" });
+    res.status(400).json({ message: "HOUSTON! Title is required!" });
+    return;
   }
 
   if (!description || typeof description !== "string") {
-    return res.status(400).json({ message: "Description is required and must be a string" });
+    res.status(400).json({ message: "HOUSTON! Description is required!" });
+    return;
   }
 
-  next(); 
+  next();
 };
